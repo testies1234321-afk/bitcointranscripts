@@ -1,22 +1,22 @@
 ---
 title: 'Scaling Bitcoin Off-Chain with PIPEs'
-speakers:
-  - Misha Komarov
-  - niftynei
+transcript_by: '0tuedon via tstbtc v1.0.0 --needs-review via review.btctranscripts.com'
+media: 'https://youtu.be/IJl3z6ZhSVQ'
 date: '2026-03-20'
 tags:
-  - covenants
-  - proof-systems
-  - cryptography
-  - scalability
-  - btcplusplus
+  - 'covenants'
+  - 'proof-systems'
+  - 'cryptography'
+  - 'scalability'
+  - 'btcplusplus'
+speakers:
+  - 'Misha Komarov'
+  - 'niftynei'
 categories:
-  - podcast
-source_file: https://youtu.be/IJl3z6ZhSVQ
-media: https://youtu.be/IJl3z6ZhSVQ
-summary: In this Bitcoin++ Insider Edition interview filmed in Istanbul, niftynei sits down with Misha Komarov to discuss Bitcoin PIPEs — a research project that uses functional and witness encryption to enable covenants and zero-knowledge proof verification on Bitcoin without any soft fork by moving computation entirely off-chain. The core idea is to encrypt a key or signature such that it can only be decrypted by correctly executing the target off-chain computation, enabling trustless non-interactive ZK rollup state transition verification in a single Bitcoin transaction without BitVM-style optimistic games; Misha also covers the v1 economic security model and its high server-side decryption cost, the v2 push toward exponential attack complexity and practical client-side performance, and hints at a future pipe script as a soft-fork-free extension of Bitcoin Script.
-transcript_by: 0tuedon via tstbtc v1.0.0 --needs-review
+  - 'podcast'
+source_file: 'https://youtu.be/IJl3z6ZhSVQ'
 ---
+
 
 Speaker 0: 00:00:00
 
@@ -45,7 +45,7 @@ Is this your first time in Istanbul?
 
 Speaker 1: 00:00:24
 
-No, I mean been here several times.
+No, I've been here several times.
 
 Speaker 0: 00:00:27
 
@@ -54,7 +54,7 @@ We're here for Bitcoin++ and we were just talking about how you're here giving a
 
 Speaker 1: 00:00:38
 
-I guess it's, I mean, officially since October last year, I would say.
+I guess it's officially since October last year, I would say.
 So it's like it's been a year and a half, I guess.
 
 Speaker 0: 00:00:45
@@ -146,7 +146,7 @@ Speaker 1: 00:04:34
 So, like the initial idea, the initial kind of whatever construction and the endgame construction, I would say, of pipes themselves is that you can define a circuit, you can, you know, kind of encrypt some key, collectively probably, but with some MPC or something.
 You can give the ciphertext to a user or to an application, and you can make the user or like an application to perform some computation.
 For example, concatenation, or multiplication, or something else, you know, some missing opcode computation, or a missing piece of opcode computation.
-And then, basically, get a user or a frontend application to compute either a signature of a certain transaction which is supposed to continue with the execution of a certain application or to decrypt a key which will attest the successful application of this particular ZDP thing.
+And then, basically, get a user or a frontend application to compute either a signature of a certain transaction which is supposed to continue with the execution of a certain application or to decrypt a key which will attest the successful application of this particular ZKP thing.
 Because this happens entirely on the application, on the user side or something else, it doesn't require anybody to talk with each other.
 It's kind of a non-interactive process.
 So that's the end game, how it should work.
@@ -154,7 +154,7 @@ The current research update is like this kind of construction, non-interactivity
 which is still pretty, you know, kind of still an open problem.
 And sure, there are a lot of like special purpose witness encryption schemes, there are a lot of like special purpose functional encryption schemes, but like none of them fit this purpose.
 So the research update was primarily about how do we go after this functional encryption slash web encryption scheme, which would fit the purpose.
-And it's kind of a little bit of a dive into, it's kind of a little bit of a dive into the life of people who do obscure cryptography.
+And it's kind of a little bit of a dive into the life of people who do obscure cryptography.
 Okay.
 
 Speaker 0: 00:06:35
@@ -265,7 +265,7 @@ You can do that, absolutely.
 But it's just a little bit too expensive.
 So we expect people in the majority of use cases to be induced from the usage, for example, of ZK roll-ups.
 This is how true ZK roll-ups become possible.
-You basically can do the state transition verification within the ZTP, a single transaction, a semestic state transition verification.
+You basically can do the state transition verification within the ZKP, a single transaction, an atomic state transition verification.
 No optimistic games, no whatever.
 Right.
 Yeah.
@@ -466,8 +466,7 @@ C++ almost, I'm sorry.
 
 Speaker 1: 00:15:47
 
-Kind of, kind of, kind of, kind of, kind of,
-kind of, kind of that.
+Kind of that.
 
 Speaker 0: 00:15:52
 
@@ -540,29 +539,29 @@ Or what's the best way to get into the witness encryption rabbit hole if someone
 
 Speaker 1: 00:17:38
 
-Honestly speaking, it all starts with GARC and Dan Bonet papers.
+Honestly speaking, it all starts with Garg and Dan Boneh papers.
 Okay, all right.
 Is that?
 
 Speaker 0: 00:17:45
 
 Dan Bonet papers.
-Who is GARC?
-Is GARC a protocol?
+Who is Garg?
+Is Garg a protocol?
 
 Speaker 1: 00:17:48
 
-No, GARC is one of the inventors.
+No, Garg is one of the inventors.
 
 Speaker 0: 00:17:50
 
 One of the inventors.
 Okay.
-It sounds a lot like, you know, you could like see how that's like a GARC thing.
+It sounds a lot like you could see how that's a Garg thing.
 
 Speaker 1: 00:17:54
 
-Or like Frank Waters and this kind of people.
+Or Brent Waters and people like that.
 
 Speaker 0: 00:17:56
 
@@ -577,13 +576,13 @@ Speaker 0: 00:18:00
 
 Cool.
 So. He didn't name something after himself?
-GARC?
+Garg?
 
 Speaker 1: 00:18:03
 
 No. No, they did not.
 They did not.
-I mean, Rachel Lynn or like recently, recently I saw people popping up here and there with like doing interviews with Rachel Lynn about I.O. And things.
+I mean, Rachel Lynn or like recently, recently I saw people popping up here and there with like doing interviews with Rachel Lin about I.O. And things.
 She's also one of the godfathers of this.
 
 Speaker 0: 00:18:17
@@ -626,3 +625,4 @@ Yeah, all right.
 Speaker 1: 00:19:00
 
 Yeah, right.
+
